@@ -1,6 +1,16 @@
-<mat-grid-list cols="4" rowHeight="2:1">
-  <mat-grid-tile *ngFor="let product of products">
-    <!-- Product content -->
-     <p>{{product.name}}</p>
-  </mat-grid-tile>
-</mat-grid-list>
+<app-header></app-header>
+
+<main class="main-content">
+  <!-- Hero Section at the top -->
+  <app-hero-section></app-hero-section>
+
+  <!-- Cross-sell products section below the hero section -->
+  <section class="products-section">
+    <app-cross-sell-products></app-cross-sell-products>
+  </section>
+
+  <!-- Routed content goes here -->
+  <router-outlet></router-outlet>
+</main>
+
+<app-footer></app-footer>
