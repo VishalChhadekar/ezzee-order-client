@@ -10,9 +10,30 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './cross-sell-products.component.scss'
 })
 export class CrossSellProductsComponent {
-  products: any[] = [];
+  products = [
+    {
+      name: 'Product 1',
+      price: 29.99,
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      name: 'Product 2',
+      price: 49.99,
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      name: 'Product 3',
+      price: 19.99,
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      name: 'Product 4',
+      price: 89.99,
+      image: 'https://via.placeholder.com/150',
+    }
+  ];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     // this.productService.getProducts().subscribe((data) => {
