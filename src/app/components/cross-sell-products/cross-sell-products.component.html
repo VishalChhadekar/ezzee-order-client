@@ -20,7 +20,7 @@
         <!-- Product Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div *ngFor="let product of products" class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl transition">
-                <img [src]="product.imageUrl" alt="{{ product.product_name }}" class="w-full h-40 object-cover rounded-md mb-4">
+                <img [src]="product.image_url" alt="{{ product.product_name }}" class="w-full h-40 object-cover rounded-md mb-4">
                 <h3 class="text-lg font-medium text-gray-800">{{ product.product_name }}</h3>
                 <p class="text-gray-500 mt-2">${{ product.price }}</p>
             </div>
