@@ -1,31 +1,41 @@
-# My Store – Backend
 
-This is the backend server for the **My Store** e-commerce application, built with **Express** and **PostgreSQL**.
+---
 
-## Table of Contents
+# Frontend `README.md`
+
+## `frontend/README.md`
+
+```markdown
+# My Store – Frontend
+
+This is the frontend client for the **My Store** e-commerce application, built with **Angular** and styled using **Tailwind CSS**.
+
+# Table of Contents
 - [Setup](#setup)
 - [Usage](#usage)
 - [Deployment](#deployment)
-- [API Endpoints](#api-endpoints)
 - [Technologies Used](#technologies-used)
 
 ---
 
-## Setup
+# Setup
 
-### Prerequisites
+## Prerequisites
 
 - [Node.js](https://nodejs.org/) and [npm](https://npmjs.com/)
-- PostgreSQL database credentials
-- Redis instance for caching
+- Angular CLI:
+
+    ```bash
+    npm install -g @angular/cli
+    ```
 
 ### Installation
 
 1. Clone the repository:
 
     ```bash
-    git clone <backend-repo-url>
-    cd backend
+    git clone <frontend-repo-url>
+    cd frontend
     ```
 
 2. Install dependencies:
@@ -34,34 +44,29 @@ This is the backend server for the **My Store** e-commerce application, built wi
     npm install
     ```
 
-3. Create a `.env` file in the root directory:
+3. Create `src/environments/environment.ts` for development environment:
 
-    ```plaintext
-    PORT=3000
-    DATABASE_URL=your_database_url
-    REDIS_URL=your_redis_url
+    ```typescript
+    export const environment = {
+      production: false,
+      apiUrl: 'http://localhost:3000/api'
+    };
     ```
 
-4. Run migrations and seed data (if any):
+4. Run the frontend application:
 
     ```bash
-    npx sequelize-cli db:migrate
-    npx sequelize-cli db:seed:all
+    ng serve
     ```
 
-5. Start the server:
-
-    ```bash
-    npm start
-    ```
-
-The backend server should be running at `http://localhost:3000`.
+The frontend should be accessible at `http://localhost:4200`.
 
 ---
 
 ## Usage
 
-To run the server:
+To start the Angular development server:
 
 ```bash
-npm start
+ng serve
+![image](https://github.com/user-attachments/assets/fee6cf2f-208b-4d31-9033-fb75fcaa047a)
