@@ -42,7 +42,7 @@
                     <p class="text-sm text-gray-500 mt-1">{{ product?.description }}</p>
                     <div class="flex items-center justify-between mt-4">
                         <span class="text-lg font-semibold text-gray-700">{{ product.price | currency }}</span>
-                        <button
+                        <button (click)="addToCart(product)"
                             class="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 focus:outline-none">
                             Add to Cart
                         </button>

@@ -1,6 +1,7 @@
 import { SharedModule } from '../../shared.module';
 import { Component, OnInit } from '@angular/core';
 import { ProductService, Product } from '../../services/product.service';
+import { CartServiceService } from '../../services/cart-service.service';
 
 @Component({
   selector: 'app-cross-sell-products',
@@ -12,7 +13,9 @@ import { ProductService, Product } from '../../services/product.service';
 export class CrossSellProductsComponent {
   products: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private productService: ProductService, 
+    private cartService: CartServiceService) { }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -28,4 +31,9 @@ export class CrossSellProductsComponent {
       }
     });
   }
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+    alert(`${product.product_name} has been added to the cart!`);
+    console.log(this.cartService.getCartItems())
+  };
 }
