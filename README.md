@@ -1,72 +1,104 @@
+My Store – Frontend
+This is the frontend application for the My Store e-commerce platform, built with Angular and styled using Tailwind CSS. It provides a user-friendly interface for browsing and managing products, making purchases, and interacting with the store’s features.
 
----
+Table of Contents
+Project Overview
+Features
+Prerequisites
+Installation
+Configuration
+Running the Application
+Deployment
+Technologies Used
+Project Overview
+This Angular application serves as the client for the My Store platform, connecting with the backend API to retrieve and manage product data, handle sales orders, and provide an interactive user experience.
 
-# Frontend `README.md`
+Features
+Product Listing: Browse a list of products with filtering capabilities.
+Search Functionality: Real-time search bar for finding products by name.
+Product Details: View detailed information for each product.
+Order Management: Create and manage sales orders.
+Responsive Design: Styled with Tailwind CSS for a responsive and modern UI.
+Prerequisites
+Before setting up the frontend application, ensure you have the following installed:
 
-## `frontend/README.md`
+Node.js and npm
 
-```markdown
-# My Store – Frontend
+Angular CLI: Install globally with:
 
-This is the frontend client for the **My Store** e-commerce application, built with **Angular** and styled using **Tailwind CSS**.
+bash
+Copy code
+npm install -g @angular/cli
+Installation
+Clone the Repository:
 
-# Table of Contents
-- [Setup](#setup)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Technologies Used](#technologies-used)
+bash
+Copy code
+git clone <frontend-repo-url>
+cd frontend
+Install Dependencies:
 
----
+bash
+Copy code
+npm install
+Configuration
+Configure the API base URL in the environment files to point to the backend API:
 
-# Setup
+Development Configuration:
 
-## Prerequisites
+Open src/environments/environment.ts and set apiUrl to your local backend API URL.
+typescript
+Copy code
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000/api'  // Local backend URL
+};
+Production Configuration:
 
-- [Node.js](https://nodejs.org/) and [npm](https://npmjs.com/)
-- Angular CLI:
+Open src/environments/environment.prod.ts and set apiUrl to your deployed backend API URL.
+typescript
+Copy code
+export const environment = {
+  production: true,
+  apiUrl: 'https://orderease-sll9.onrender.com/api'  // Deployed backend URL
+};
+Running the Application
+Start the Development Server:
 
-    ```bash
-    npm install -g @angular/cli
-    ```
-
-### Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone <frontend-repo-url>
-    cd frontend
-    ```
-
-2. Install dependencies:
-
-    ```bash
-    npm install
-    ```
-
-3. Create `src/environments/environment.ts` for development environment:
-
-    ```typescript
-    export const environment = {
-      production: false,
-      apiUrl: 'http://localhost:3000/api'
-    };
-    ```
-
-4. Run the frontend application:
-
-    ```bash
-    ng serve
-    ```
-
-The frontend should be accessible at `http://localhost:4200`.
-
----
-
-## Usage
-
-To start the Angular development server:
-
-```bash
+bash
+Copy code
 ng serve
-![image](https://github.com/user-attachments/assets/fee6cf2f-208b-4d31-9033-fb75fcaa047a)
+Access the Application:
+
+Open your browser and go to http://localhost:4200.
+Deployment
+You can deploy the Angular application on platforms like Vercel, Netlify, or GitHub Pages. Below are the steps to deploy on Vercel:
+
+Push your code to GitHub (or any other Git hosting platform).
+
+Deploy on Vercel:
+
+Log in to Vercel and import your repository.
+During deployment, set the Environment Variables for apiUrl in Vercel’s dashboard:
+production.apiUrl should be set to https://orderease-sll9.onrender.com/api.
+Update Angular Production Config:
+
+Make sure environment.prod.ts is configured to use the correct production apiUrl before deployment.
+Technologies Used
+Angular – Frontend framework for building dynamic single-page applications.
+Tailwind CSS – Utility-first CSS framework for custom, responsive designs.
+Angular Router – Handles navigation and routing.
+HTTPClient – For API requests to the backend server.
+Folder Structure
+plaintext
+Copy code
+src
+├── app
+│   ├── components       # Shared components like header, footer
+│   ├── services         # Services for handling API requests
+│   ├── pages            # Different pages (e.g., home, products, about)
+│   └── app.component.ts # Root component
+├── environments         # Environment-specific configuration
+└── assets               # Static assets
+Contact
+For any questions or issues, please open an issue on the GitHub repository.
