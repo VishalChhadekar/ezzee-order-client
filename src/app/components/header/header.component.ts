@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared.module';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ProductService, Product } from '../../services/product.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [SharedModule, FormsModule],
+  imports: [
+    SharedModule,
+    FormsModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
