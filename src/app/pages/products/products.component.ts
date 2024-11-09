@@ -48,5 +48,5 @@ export class ProductsComponent {
     this.cartService.addToCart(product);
     alert(`${product.product_name} has been added to the cart!`);
     console.log(this.cartService.getCartItems())
-  };
+  }
 }

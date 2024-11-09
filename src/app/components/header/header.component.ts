@@ -6,6 +6,7 @@ import { ProductService, Product } from '../../services/product.service';
 import { FormsModule } from '@angular/forms';
 import { CartServiceService } from '../../services/cart-service.service';
 import { SalesOrderService, SalesOrder } from '../../services/sales-order.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -34,14 +35,11 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private cartService: CartServiceService,
     private salesOrderService: SalesOrderService,
+    private sharedService: SharedService, // Inject shared service
   ) { }
 
   ngOnInit(): void {
     this.getCartItems();
-  }
-
-  onSearch(): void {
-    // Implement search functionality
   }
 
   // Trigger the checkout process and create a sales order
@@ -87,5 +85,8 @@ export class HeaderComponent implements OnInit {
   }
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => total + item.price, 0);
+  }
+  onSearch(): void {
+    this.sharedService.updateSearchQuery(this.searchQuery); // Emit the search query
   }
 }
