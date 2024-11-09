@@ -1,27 +1,67 @@
-# EzzeeOrderClient
+# My Store – Backend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+This is the backend server for the **My Store** e-commerce application, built with **Express** and **PostgreSQL**.
 
-## Development server
+## Table of Contents
+- [Setup](#setup)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [API Endpoints](#api-endpoints)
+- [Technologies Used](#technologies-used)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+- [Node.js](https://nodejs.org/) and [npm](https://npmjs.com/)
+- PostgreSQL database credentials
+- Redis instance for caching
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+1. Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```bash
+    git clone <backend-repo-url>
+    cd backend
+    ```
 
-## Running end-to-end tests
+2. Install dependencies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```bash
+    npm install
+    ```
 
-## Further help
+3. Create a `.env` file in the root directory:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    ```plaintext
+    PORT=3000
+    DATABASE_URL=your_database_url
+    REDIS_URL=your_redis_url
+    ```
+
+4. Run migrations and seed data (if any):
+
+    ```bash
+    npx sequelize-cli db:migrate
+    npx sequelize-cli db:seed:all
+    ```
+
+5. Start the server:
+
+    ```bash
+    npm start
+    ```
+
+The backend server should be running at `http://localhost:3000`.
+
+---
+
+## Usage
+
+To run the server:
+
+```bash
+npm start
