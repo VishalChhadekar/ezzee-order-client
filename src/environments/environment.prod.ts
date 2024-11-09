@@ -1,4 +1,4 @@
 export const environment = {
-    production: true,
-    apiUrl: 'https://orderease-sll9.onrender.com/api'  // Update with your production API
-};
+    production: process.env["PRODUCTION"] === 'true',
+    apiUrl: process.env["API_URL"] || 'default_api_url',
+  };
