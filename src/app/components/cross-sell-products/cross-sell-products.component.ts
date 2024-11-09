@@ -41,7 +41,6 @@ export class CrossSellProductsComponent {
   }
 
   filterProducts(query: string): void {
-    console.log(query)
     if (query) {
       this.filteredProducts = this.products.filter(product =>
         product.product_name.toLowerCase().includes(query.toLowerCase())

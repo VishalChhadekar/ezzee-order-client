@@ -3,6 +3,7 @@ import { ProductService, Product } from '../../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { SharedModule } from '../../shared.module';
 import { CartServiceService } from '../../services/cart-service.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-products',
@@ -18,7 +19,8 @@ export class ProductsComponent {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private cartService: CartServiceService
+    private cartService: CartServiceService,
+    private sharedService: SharedService // Inject shared service
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,9 @@ export class ProductsComponent {
           product.product_name.toLowerCase().includes(search.toLowerCase())
         );
       }
+    });
+    this.sharedService.searchQuery$.subscribe(query => {
+      this.filterProducts(query); // Filter products whenever the search query changes
     });
   }
 
@@ -48,5 +53,15 @@ export class ProductsComponent {
     this.cartService.addToCart(product);
     alert(`${product.product_name} has been added to the cart!`);
     console.log(this.cartService.getCartItems())
+  }
+
+  filterProducts(query: string): void {
+    if (query) {
+      this.filteredProducts = this.products.filter(product =>
+        product.product_name.toLowerCase().includes(query.toLowerCase())
+      );
+    } else {
+      this.filteredProducts = this.products;  // If no query, show all products
+    }
   }
 }
