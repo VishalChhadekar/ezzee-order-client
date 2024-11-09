@@ -21,7 +21,7 @@ node_modules/
 .npm/
 
 # Environment files
-src/environments/environment*.ts
+# src/environments/environment*.ts
 
 # Angular CLI specific files
 .angular/cache/
