@@ -85,8 +85,12 @@
       <span class="text-lg font-semibold">Total:</span>
       <span class="text-lg font-bold">{{ getTotalPrice() | currency }}</span>
     </div>
-    <button class="bg-pink-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-pink-600 w-full">
+    <button (click)="checkout()" class="bg-pink-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-pink-600 w-full">
       Checkout
     </button>
   </div>
+</div>
+<!-- Success Banner -->
+<div *ngIf="successMessage" class="fixed bottom-0 left-0 w-full bg-green-500 text-white text-center py-2">
+  <p>{{ successMessage }}</p>
 </div>

@@ -5,11 +5,11 @@ import { environment } from '../../environments/environment';
 
 export interface SalesOrder {
   id?: number;
-  customerName: string;
+  customer_name: string;
   email: string;
-  mobileNumber: string;
+  mobile_number: string;
   status?: string;
-  products: { productId: number; quantity: number }[];
+  product_ids: { productId: number; quantity: number }[];
 }
 
 @Injectable({
