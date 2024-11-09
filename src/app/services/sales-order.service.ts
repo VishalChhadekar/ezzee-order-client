@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+// import { environment } from '../../environments/environment';
 
 export interface SalesOrder {
   id?: number;
@@ -16,7 +16,7 @@ export interface SalesOrder {
   providedIn: 'root'
 })
 export class SalesOrderService {
-  private apiUrl = `${environment.apiUrl}/sales-orders`;
+  private apiUrl = `https://orderease-sll9.onrender.com/api/sales-orders`;
 
   constructor(private http: HttpClient) { }
 

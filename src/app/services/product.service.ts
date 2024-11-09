@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+// import { environment } from '../../environments/environment';
 
 export interface Product {
   id: number;
@@ -15,7 +15,7 @@ export interface Product {
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = `${environment.apiUrl}/internal/products`;
+  private apiUrl = `https://orderease-sll9.onrender.com/api/internal/products`;
 
   constructor(private http: HttpClient) { }
 
