@@ -1,15 +1,18 @@
 <app-header></app-header>
 
 <main class="main-content">
-  <!-- Hero Section at the top -->
-  <app-hero-section></app-hero-section>
+  <!-- Hero Section and Cross-Sell Products Section Only on Home Page -->
+  <section *ngIf="router.url === '/'">
+    <!-- Hero Section at the top -->
+    <app-hero-section></app-hero-section>
 
-  <!-- Cross-sell products section below the hero section -->
-  <section class="products-section">
-    <app-cross-sell-products></app-cross-sell-products>
+    <!-- Cross-sell products section below the hero section -->
+    <section class="products-section">
+      <app-cross-sell-products></app-cross-sell-products>
+    </section>
   </section>
 
-  <!-- Routed content goes here -->
+  <!-- Routed content goes here for all pages -->
   <router-outlet></router-outlet>
 </main>
 

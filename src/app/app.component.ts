@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { SharedModule } from '../app/shared.module'
 import { HeaderComponent } from './components/header/header.component';
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
@@ -52,7 +52,7 @@ export class AppComponent {
     }
   ];
 
-  constructor() { }
+  constructor(public router: Router) {}  // Make router public
 
   ngOnInit(): void { }
 }
